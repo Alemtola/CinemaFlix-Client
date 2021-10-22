@@ -24440,7 +24440,7 @@ function RegistrationView(props) {
     const [Birthday, setBirthday] = _react.useState('');
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log(username, password, email, birthday);
+        console.log(username, password, email, Birthday);
         /* Send a request to the server for authentication */ /* then call props on registored user(username) */ props.onRegistration(username);
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs("form", {
@@ -25539,7 +25539,7 @@ MovieCard.propTypes = {
         Director: _propTypesDefault.default.shape({
             Name: _propTypesDefault.default.string.isRequired
         }),
-        ImageUrl: _propTypesDefault.default.string.isRequired
+        ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
     onMovieClick: _propTypesDefault.default.func.isRequired
 };
@@ -25593,7 +25593,7 @@ class MovieView extends _reactDefault.default.Component {
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                        src: movie.ImageUrl,
+                        src: movie.ImagePath,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 24
@@ -25738,9 +25738,8 @@ MovieView.propTypes = {
         Director: _propTypesDefault.default.shape({
             Name: _propTypesDefault.default.string.isRequired
         }),
-        ImageUrl: _propTypesDefault.default.string.isRequired
-    }).isRequired,
-    onMovieClick: _propTypesDefault.default.func.isRequired
+        ImagePath: _propTypesDefault.default.string.isRequired
+    }).isRequired
 };
 
   $parcel$ReactRefreshHelpers$3741.postlude(module);
