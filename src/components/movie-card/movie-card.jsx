@@ -8,11 +8,11 @@ export class MovieCard extends React.Component {
     const { movie, onMovieClick  } = this.props;
 
     return (
-      <Card>
+      <Card className="text-center" style={{ width: '18rem' }}>
         <Card.Img variant="top" src={movie.ImagePath} />
         <Card.Body>
           <Card.Title>{movie.Title}</Card.Title>
-          <Card.Text>{movie.ReleaseYear}</Card.Text>
+          <Card.Subtitle className="mb-2 text-muted">{movie.ReleaseYear}</Card.Subtitle>
           <Button onClick={() => onMovieClick(movie)} variant="link">Open</Button>
         </Card.Body>
       </Card>
