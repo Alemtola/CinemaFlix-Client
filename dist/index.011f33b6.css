@@ -1,0 +1,30 @@
+.registerCard {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 20px;
+  background: white;
+  color: black;
+}
+
+.registerButton {
+  width: 100%;
+  display: block;
+}
+.loginCard {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 20px;
+  background: white;
+  color: black;
+}
+
+.loginButton {
+  width: 100%;
+  display: block;
+}
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.011f33b6.css.map */
