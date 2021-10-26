@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
-import { Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+import { Navbar, Nav, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 
 
 import './registration-view.scss';
@@ -21,7 +21,20 @@ export function RegistrationView(props) {
   };
 
   return (
-    <Container>
+ 
+
+    <Container fluid>
+      <Navbar bg="dark" variant="dark">
+        <Container fluid>
+          <Navbar.Brand href="#home">CinemaFlix</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Movies</Nav.Link>
+            <Nav.Link href="#user">Profile</Nav.Link>
+            <Nav.Link href="#logout">Logout</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+
       <Row>
         <Col>
           <CardGroup>
@@ -60,7 +73,7 @@ export function RegistrationView(props) {
         </Col>
       </Row>
     </Container>
-    
+
   );
 }
 

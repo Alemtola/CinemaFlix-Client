@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
-import { Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+import { Navbar, Nav, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 
 import './login-view.scss';
 
@@ -17,35 +17,49 @@ export function LoginView(props) {
   };
 
   return (
-    <Card className="loginCard">
-      <Card.Body>
-        <Card.Title className="text-center">Welcome to CinemaFlix.</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted text-center">Please Login</Card.Subtitle>
+    <Container fluid>
+
+      <Navbar bg="dark" variant="dark">
+        <Container fluid>
+          <Navbar.Brand href="#home">CinemaFlix</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Movies</Nav.Link>
+            <Nav.Link href="#user">Profile</Nav.Link>
+            <Nav.Link href="#logout">Logout</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
     
-        <Form >
-          <Form.Group controlId="formUsername">
-            <Form.Label>Username</Form.Label>
-            <Form.Control 
-              type="text" 
-              onChange={e => setUsername(e.target.value)}
-            />
-          </Form.Group>
+      <Card className="loginCard">
+        <Card.Body>
+          <Card.Title className="text-center">Welcome to CinemaFlix.</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted text-center">Please Login</Card.Subtitle>
+      
+          <Form >
+            <Form.Group controlId="formUsername">
+              <Form.Label>Username</Form.Label>
+              <Form.Control 
+                type="text" 
+                onChange={e => setUsername(e.target.value)}
+              />
+            </Form.Group>
 
-          <Form.Group controlId="formPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control 
-              className="mb-3" 
-              type="password" 
-              onChange={e => setPassword(e.target.value)}
-            />
-          </Form.Group>
+            <Form.Group controlId="formPassword">
+              <Form.Label>Password</Form.Label>
+              <Form.Control 
+                className="mb-3" 
+                type="password" 
+                onChange={e => setPassword(e.target.value)}
+              />
+            </Form.Group>
 
-          <Button className="loginButton" variant="secondary" size="lg" type="submit" onClick={handleSubmit}>
-            Login
-          </Button>
-        </Form>
-      </Card.Body>
-    </Card>
+            <Button className="loginButton" variant="secondary" size="lg" type="submit" onClick={handleSubmit}>
+              Login
+            </Button>
+          </Form>
+        </Card.Body>
+      </Card>
+    </Container>
   );
     
 }
