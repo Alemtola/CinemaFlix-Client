@@ -2,7 +2,7 @@ import React from 'react';
 //importing axios library to fetch movies from database
 import axios from 'axios';
 
-
+import './main-view.scss';
 //importing the registration view into the main-view
 import { RegistrationView } from '../registration-view/registration-view';
 //importing the login view into the main-view
@@ -11,6 +11,8 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 ////importing the movie-view into the main-view
 import { MovieView } from '../movie-view/movie-view';
+
+import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
 
 export class MainView extends React.Component {
 
@@ -73,12 +75,42 @@ export class MainView extends React.Component {
 
     return (
            <div className="main-view">
-               {selectedMovie
-                   ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
-                   : movies.map(movie => (<MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} /> ))
-               }
+              <Navbar bg="dark" variant="dark">
+                <Container fluid>
+                  <Navbar.Brand href="#home">CinemaFlix</Navbar.Brand>
+                  <Nav className="me-auto">
+                    <Nav.Link href="#home">Movies</Nav.Link>
+                    <Nav.Link href="#user">Profile</Nav.Link>
+                    <Nav.Link href="#logout">Logout</Nav.Link>
+                  </Nav>
+                </Container>
+              </Navbar>
+              <div>
+                <Container>
+                  {selectedMovie
+                    ? (
+                      <Row className="justify-content-lg-center">
+                        <Col lg={9} md={6}>
+                          <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
+                        </Col>
+                      </Row>
+                    )
+                    : (
+                      <Row className="justify-content-lg-center">
+                        { movies.map(movie => (
+                          <Col lg={3} md={4} sm={6} xs={8}>
+                            <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
+                          </Col>
+                          ))
+                        }
+                      </Row>
+                    )  
+                  }
+                </Container>
+              </div>
+               
            </div>
-       );
+    );
 
   }
 
