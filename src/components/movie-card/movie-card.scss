@@ -4,7 +4,11 @@
 
 .movieCard {
   width: 100%;
-  max-width: 200px;
-  /*height: 400px;*/
-  margin: 10px;
+  margin: 20px;
+}
+
+.cardImage {
+  width: 100%!important;
+  height: 200px!important;
+  object-fit: cover;
 }
