@@ -75,7 +75,7 @@ export class MainView extends React.Component {
 
     return (
            <div className="main-view">
-              <Navbar bg="dark" variant="dark">
+              <Navbar bg="navColor" variant="dark" expand="lg">
                 <Container fluid>
                   <Navbar.Brand href="#home">CinemaFlix</Navbar.Brand>
                   <Nav className="me-auto">
@@ -90,7 +90,7 @@ export class MainView extends React.Component {
                   {selectedMovie
                     ? (
                       <Row className="justify-content-lg-center">
-                        <Col lg={9} md={6}>
+                        <Col lg={9} >
                           <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }}/>
                         </Col>
                       </Row>
@@ -98,7 +98,7 @@ export class MainView extends React.Component {
                     : (
                       <Row className="justify-content-lg-center">
                         { movies.map(movie => (
-                          <Col lg={3} md={4} sm={6} xs={8}>
+                          <Col lg={3} md={4} sm={6} >
                             <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
                           </Col>
                           ))
