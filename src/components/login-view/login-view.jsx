@@ -17,15 +17,13 @@ export function LoginView(props) {
   };
 
   return (
-    <Container fluid>
+    <Container fluid className="loginContainer" >
 
-      <Navbar bg="dark" variant="dark">
+      <Navbar bg="navColor" variant="dark" expand="lg">
         <Container fluid>
           <Navbar.Brand href="#home">CinemaFlix</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Movies</Nav.Link>
-            <Nav.Link href="#user">Profile</Nav.Link>
-            <Nav.Link href="#logout">Logout</Nav.Link>
+            <Nav.Link href="#logout">Login</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
