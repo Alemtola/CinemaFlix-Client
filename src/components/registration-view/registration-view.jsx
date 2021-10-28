@@ -23,18 +23,21 @@ export function RegistrationView(props) {
   return (
  
 
-    <Container fluid>
-      <Navbar bg="dark" variant="dark">
-        <Container fluid>
-          <Navbar.Brand href="#home">CinemaFlix</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Movies</Nav.Link>
-            <Nav.Link href="#user">Profile</Nav.Link>
-            <Nav.Link href="#logout">Logout</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+    <Container fluid className="registerContainer" >
+    
+        <Navbar bg="navColor" variant="dark" expand="lg">
+          <Container fluid>
+            <Navbar.Brand href="#home">CinemaFlix</Navbar.Brand>
+            <Nav className="me-auto">
+              <Nav.Link href="#logout">Register</Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
+     
 
+      
+
+    
       <Row>
         <Col>
           <CardGroup>
@@ -63,13 +66,13 @@ export function RegistrationView(props) {
                     <Form.Label>Birthday</Form.Label>
                     <Form.Control className="mb-3" type="date" value={Birthday} onChange={e => setBirthday(e.target.value)} />
                   </Form.Group>
-                   
+                  
                   <Button className="registerButton" variant="secondary" size="lg" type="submit" onClick={handleSubmit}>Register</Button>
                   
                 </Form>
               </Card.Body>
             </Card>
-         </CardGroup>
+        </CardGroup>
         </Col>
       </Row>
     </Container>
