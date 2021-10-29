@@ -1,0 +1,27 @@
+
+*{
+  box-sizing: border-box;
+}
+.loginContainer{
+  background: #5c1818;
+  width: 100%;
+  height: 100vh;
+}
+
+.bg-navColor{
+  background: #000;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  background:white;
+  color: black;
+}
+
+.loginButton {
+  width: 100%;
+  display: block;
+}

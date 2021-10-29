@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+}
+
+.main-view {
+  font-family: "Fira Sans", sans-serif;
+  background: #5c1818;
+  width: 100%;
+  display: inline-block;
+}
+
+.bg-navColor {
+  background: #000;
+}
+* {
+  box-sizing: border-box;
+}
+
+.registerContainer {
+  background: #5c1818;
+  width: 100%;
+  height: 100vh;
+}
+
+.bg-navColor {
+  background: #000;
+}
+
+.registerCard {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  background: white;
+  color: black;
+}
+
+.registerButton {
+  width: 100%;
+  display: block;
+}
+* {
+  box-sizing: border-box;
+}
+
+.loginContainer {
+  background: #5c1818;
+  width: 100%;
+  height: 100vh;
+}
+
+.bg-navColor {
+  background: #000;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 50px;
+  background: white;
+  color: black;
+}
+
+.loginButton {
+  width: 100%;
+  display: block;
+}
+.movieContainer {
+  display: inline-block;
+}
+
+.movieCard {
+  width: 100%;
+  margin: 20px;
+}
+
+.cardImage {
+  width: 100% !important;
+  height: 200px !important;
+  object-fit: cover;
+}
+.moviesContainer {
+  background: #5c1818;
+  width: 100%;
+  height: 100vh;
+}
+
+.movie-view {
+  margin-top: 50px;
+  color: white;
+}
+
+.movie-poster {
+  text-align: center;
+}
+
+.title, .description, .genre, .director, .actors, .year {
+  color: black;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.movie-button-div {
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.movie-button {
+  margin-top: 20px;
+  width: 100%;
+  background-color: black;
+}
+* {
+  box-sizing: border-box;
+}
+
+html, body, .app-container {
+  background-color: #5c1818;
+  font-family: "Fira Sans", sans-serif;
+}
+/*# sourceMappingURL=index.17d663fa.css.map */

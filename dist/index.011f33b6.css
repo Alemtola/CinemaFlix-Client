@@ -1,0 +1,46 @@
+.registerCard {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 20px;
+  background: white;
+  color: black;
+}
+
+.registerButton {
+  width: 100%;
+  display: block;
+}
+.loginCard {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 20px;
+  background: white;
+  color: black;
+}
+
+.loginButton {
+  width: 100%;
+  display: block;
+}
+.movieContainer {
+  display: inline-block;
+}
+
+.movieCard {
+  width: 100%;
+  max-width: 200px;
+  /*height: 400px;*/
+  margin: 10px;
+}
+
+.main-view {
+  background: #5c1818;
+  width: 100%;
+  display: inline-block;
+}
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.011f33b6.css.map */
