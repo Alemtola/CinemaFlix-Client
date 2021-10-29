@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
+import axios from 'axios';
 import { Navbar, Nav, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 
 import './login-view.scss';
@@ -10,10 +11,18 @@ export function LoginView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password);
     /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
-    props.onLoggedIn(username);
+    axios.post('https://immense-reef-38292.herokuapp.com/login', {
+      Username: username,
+      Password: password
+    })
+    .then(response => {
+      const data = response.data;
+      props.onLoggedIn(data);
+    })
+    .catch(e => {
+      console.log('no such user')
+    });
   };
 
   return (
@@ -38,7 +47,9 @@ export function LoginView(props) {
               <Form.Label>Username</Form.Label>
               <Form.Control 
                 type="text" 
+                placeholder="*required field"
                 onChange={e => setUsername(e.target.value)}
+                required
               />
             </Form.Group>
 
@@ -47,7 +58,9 @@ export function LoginView(props) {
               <Form.Control 
                 className="mb-3" 
                 type="password" 
+                placeholder="*required field"
                 onChange={e => setPassword(e.target.value)}
+                required
               />
             </Form.Group>
 
