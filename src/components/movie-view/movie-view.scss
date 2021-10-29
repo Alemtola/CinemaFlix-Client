@@ -13,8 +13,19 @@
 .movie-poster {
   text-align: center;
 }
-.title, .description, .genre, .director {
+.title, .description, .genre, .director, .actors, .year  {
   color: black;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 400;
+}
+
+.movie-button-div{
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+}
+.movie-button {
+  margin-top: 20px;
+  width: 100%;
+  background-color: black;
 }
