@@ -1,5 +1,8 @@
-$color: #5c1818;
+*{
+  box-sizing: border-box;
+}
 
-.body {
+html, body, .app-container {
   background-color:#5c1818;
+  font-family: 'Fira Sans', sans-serif;
 }
