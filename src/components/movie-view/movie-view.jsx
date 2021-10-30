@@ -23,7 +23,7 @@ export class MovieView extends React.Component {
 
     return (
 
-      <Container fluid className="moviesContainer">
+      <Container className="moviesContainer">
         <Row>
           <Col>
             <div className="movie-view">
@@ -69,7 +69,13 @@ export class MovieView extends React.Component {
               <div className="movie-button-div">
                 <Button className="movie-button" bg="dark" variant="dark" onClick={() => { onBackClick(null); }}>Back</Button>
               </div>
-              
+              <Link to={`/directors/${movie.Director.Name}`}>
+                <Button variant="link">Director</Button>
+              </Link>
+
+              <Link to={`/genres/${movie.Genre.Name}`}>
+                <Button variant="link">Genre</Button>
+              </Link>
 
             </div>
           </Col>
