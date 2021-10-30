@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
+import axios from 'axios';
 import { Navbar, Nav, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 
 
 import './registration-view.scss';
 
-export function RegistrationView(props) {
+export function RegistrationView (props) {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
   const [ email, setEmail ] = useState('');
@@ -14,10 +15,20 @@ export function RegistrationView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, password, email, Birthday);
-    /* Send a request to the server for authentication */
-    /* then call props on registored user(username) */
-    props.onRegistration(username);
+    axios.post('https://immense-reef-38292.herokuapp.com/users', {
+      Username: username,
+      Password: password,
+      Email: email,
+      Birthday: Birthday
+    })
+    .then(response => {
+      const data = response.data;
+      console.log(data);
+      window.open('/', '_self'); // '_self' is necessary to open page in the current tab
+    })
+    .catch(e => {
+      console.log('error registering the user')
+    });
   };
 
   return (
@@ -25,19 +36,15 @@ export function RegistrationView(props) {
 
     <Container fluid className="registerContainer" >
     
-        <Navbar bg="navColor" variant="dark" expand="lg">
-          <Container fluid>
-            <Navbar.Brand href="#home">CinemaFlix</Navbar.Brand>
-            <Nav className="me-auto">
-              <Nav.Link href="#logout">Register</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
+      <Navbar bg="navColor" variant="dark" expand="lg">
+        <Container fluid>
+          <Navbar.Brand href="#home">CinemaFlix</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#logout">Register</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
      
-
-      
-
-    
       <Row>
         <Col>
           <CardGroup>
@@ -82,10 +89,19 @@ export function RegistrationView(props) {
 
                   <Form.Group>
                     <Form.Label>Birthday</Form.Label>
-                    <Form.Control className="mb-3" type="date" value={Birthday} onChange={e => setBirthday(e.target.value)} />
+                    <Form.Control 
+                      className="mb-3" 
+                      type="date" 
+                      value={Birthday} 
+                      onChange={e => setBirthday(e.target.value)} 
+                    />
                   </Form.Group>
                   
-                  <Button className="registerButton" variant="secondary" size="lg" type="submit" onClick={handleSubmit}>Register</Button>
+                  <Button 
+                    className="registerButton" 
+                    variant="secondary" size="lg" type="submit" 
+                    onClick={handleSubmit}>Register
+                  </Button>
                   
                 </Form>
               </Card.Body>
@@ -99,5 +115,5 @@ export function RegistrationView(props) {
 }
 
 RegistrationView.propTypes = {
-  onRegistration: PropTypes.func.isRequired,
-};
+  onRegistration: PropTypes.func.isRequired
+}
