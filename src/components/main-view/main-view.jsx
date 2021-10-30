@@ -1,11 +1,10 @@
 import React from 'react';
 //importing axios library to fetch movies from database
 import axios from 'axios';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import './main-view.scss';
-//importing the registration view into the main-view
-import { RegistrationView } from '../registration-view/registration-view';
+
 //importing the login view into the main-view
 import { LoginView } from '../login-view/login-view';
 //importing the movie-card into the main-view
@@ -16,6 +15,8 @@ import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
 //importing the director-view into the main-view
 import { GenreView } from '../genre-view/genre-view';
+//importing the registration view into the main-view
+import { RegistrationView } from '../registration-view/registration-view';
 
 import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
 
@@ -97,7 +98,7 @@ export class MainView extends React.Component {
               
                 <div>
                   <Container>
-                    <Row className="main-view justify-content-md-center">
+                    <Row className="justify-content-md-center">
 
                       <Route exact path="/" render={() => {
 
@@ -115,6 +116,7 @@ export class MainView extends React.Component {
                       }} />
 
                       <Route path="/register" render={() => {
+                        if (user) return <Redirect to="/" />
                         return <Col>
                           <RegistrationView />
                         </Col>
