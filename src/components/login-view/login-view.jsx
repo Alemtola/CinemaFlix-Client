@@ -26,16 +26,7 @@ export function LoginView(props) {
   };
 
   return (
-    <Container fluid className="loginContainer" >
-
-      <Navbar bg="navColor" variant="dark" expand="lg">
-        <Container fluid>
-          <Navbar.Brand href="#home">CinemaFlix</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#logout">Login</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+    <Container className="loginContainer" >
     
       <Card className="loginCard">
         <Card.Body>

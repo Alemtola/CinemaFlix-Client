@@ -34,16 +34,8 @@ export function RegistrationView (props) {
   return (
  
 
-    <Container fluid className="registerContainer" >
-    
-      <Navbar bg="navColor" variant="dark" expand="lg">
-        <Container fluid>
-          <Navbar.Brand href="#home">CinemaFlix</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#logout">Register</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+    <Container  className="registerContainer" >
+  
      
       <Row>
         <Col>
