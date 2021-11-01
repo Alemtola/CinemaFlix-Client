@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import './movie-view.scss';
 import { Container, Row, Col, Button } from 'react-bootstrap';
@@ -46,36 +47,31 @@ export class MovieView extends React.Component {
                 <span className="genre">Genre: </span>
                 <span className="value">{movie.Genre.Name}</span>
               </div>
-              <div className="genre-description">
-                <span className="genre">Description: </span>
-                <span className="value">{movie.Genre.Description}</span>
-              </div>
               <div className="movie-director">
                 <span className="director">Director: </span>
                 <span className="value">{movie.Director.Name}</span>
-              </div>
-              <div className="director-bio">
-                <span className="director">Bio: </span>
-                <span className="value">{movie.Director.Bio}</span>
-              </div>
-              <div className="director-birthyear">
-                <span className="director">BirthYear: </span>
-                <span className="value">{movie.Director.BirthYear}</span>
               </div>
               <div className="movie-actors">
                 <span className="actors">Actors: </span>
                 <span className="value">{movie.Actors}</span>
               </div>
+
+              <div className="director-button-div">
+                <Link to={`/directors/${movie.Director.Name}`}>
+                  <Button className="director-button" bg="dark" variant="dark">Director</Button>
+                </Link>
+              </div>
+
+              <div className="genre-button-div">
+                <Link to={`/genres/${movie.Genre.Name}`}>
+                  <Button className="genre-button" bg="dark" variant="dark">Genre</Button>
+                </Link>
+              </div>
+
               <div className="movie-button-div">
                 <Button className="movie-button" bg="dark" variant="dark" onClick={() => { onBackClick(null); }}>Back</Button>
               </div>
-              <Link to={`/directors/${movie.Director.Name}`}>
-                <Button variant="link">Director</Button>
-              </Link>
 
-              <Link to={`/genres/${movie.Genre.Name}`}>
-                <Button variant="link">Genre</Button>
-              </Link>
 
             </div>
           </Col>
@@ -92,13 +88,10 @@ MovieView.propTypes = {
     ReleaseYear: PropTypes.number.isRequired,
     Description: PropTypes.string.isRequired,
     Genre: PropTypes.shape({
-      Name: PropTypes.string.isRequired,
-      Description: PropTypes.string.isRequired
+      Name: PropTypes.string.isRequired
     }),
     Director: PropTypes.shape({
-      Name: PropTypes.string.isRequired,
-      Bio: PropTypes.string.isRequired,
-      BirthYear: PropTypes.number.isRequired,
+      Name: PropTypes.string.isRequired
     }),
     Actors: PropTypes.array.isRequired,
     ImagePath: PropTypes.string.isRequired
