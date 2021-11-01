@@ -15,22 +15,22 @@ export class DirectorView extends React.Component {
           <Col>
             <div className="director-view">
               <div className="director-name">
-                <span className="name">Name:</span>
+                <span className="name">Name: </span>
                 <span className="value">{director.Name}</span>
               </div>
 
               <div className="director-bio">
-                <span className="bio">Bio:</span>
+                <span className="bio">Bio: </span>
                 <span className="value">{director.Bio}</span>
               </div>
 
               <div className="director-birth">
-                <span className="birthyear">BirthYear:</span>
+                <span className="birthyear">BirthYear: </span>
                 <span className="value">{director.Bio}</span>
               </div>
 
               <div className="director-button-div">
-                <Button className="director-button" variant="secondary" className="mt-3" onClick={() => { onBackClick(null); }}>Back</Button>
+                <Button className="director-button mt-3" variant="secondary" onClick={() => { onBackClick(null); }}>Back</Button>
               </div>
               
             </div>
