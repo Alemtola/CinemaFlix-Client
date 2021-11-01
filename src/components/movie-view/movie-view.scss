@@ -12,6 +12,7 @@
 
 .movie-poster {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .title, .description, .genre, .director, .actors, .year  {
@@ -20,7 +21,30 @@
   font-weight: 400;
 }
 
-.movie-button-div{
+.director-button-div {
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.director-button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.genre-button-div {
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.genre-button {
+  margin-top: 20px;
+  width: 100%;
+}
+
+
+.movie-button-div {
   text-align: center;
   margin: 0 auto;
   width: 200px;
