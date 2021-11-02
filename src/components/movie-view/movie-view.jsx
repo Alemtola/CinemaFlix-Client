@@ -1,11 +1,33 @@
 import React from 'react';
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 import './movie-view.scss';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
 export class MovieView extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+  }
+
+  addFavoriteMovie() {
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('user');
+
+    axios.post(`https://immense-reef-38292.herokuapp.com/users/${username}/movies/${this.props.movie._id}`, {}, {
+      headers: { Authorization: `Bearer ${token}` },
+      method: 'POST'
+    })
+      .then(response => {
+        alert(`Added to Favorites List`)
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   keypressCallback(event) {
     console.log(event.key);
@@ -36,7 +58,7 @@ export class MovieView extends React.Component {
                 <span className="value">{movie.Title}</span>
               </div>
               <div className="movie-year">
-                <span className="year">ReleaseYear: </span>
+                <span className="year">Release Year: </span>
                 <span className="value">{movie.ReleaseYear}</span>
               </div>
               <div className="movie-description">
@@ -55,6 +77,10 @@ export class MovieView extends React.Component {
                 <span className="actors">Actors: </span>
                 <span className="value">{movie.Actors}</span>
               </div>
+              <div className="movie-feature">
+                <span className="featured">Featured: </span>
+                <span className="value">Yes</span>
+              </div>
 
               <div className="director-button-div">
                 <Link to={`/directors/${movie.Director.Name}`}>
@@ -71,6 +97,14 @@ export class MovieView extends React.Component {
               <div className="movie-button-div">
                 <Button className="movie-button" bg="dark" variant="dark" onClick={() => { onBackClick(null); }}>Back</Button>
               </div>
+
+              <div className="fav-button-div">
+                <Button bg="danger" variant="danger" className="fav-button" value={movie._id} onClick={(e) => this.addFavoriteMovie(e, movie)}>
+                  Add to Favorites
+                </Button>
+              </div>
+
+             
 
 
             </div>
@@ -94,6 +128,7 @@ MovieView.propTypes = {
       Name: PropTypes.string.isRequired
     }),
     Actors: PropTypes.array.isRequired,
+    Featured: PropTypes.bool,
     ImagePath: PropTypes.string.isRequired
   }).isRequired,
 };
