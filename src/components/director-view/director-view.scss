@@ -1,0 +1,29 @@
+
+.directorContainer {
+  background: #5c1818;
+  width: 100%;
+  height: 100vh;
+}
+
+.director-view {
+  margin-top: 50px;
+  color: white;
+}
+
+.name, .bio, .birthyear {
+  color: black;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.director-button-div {
+  text-align: center;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.director-button {
+  margin-top: 20px;
+  width: 100%;
+  background-color: black;
+}
