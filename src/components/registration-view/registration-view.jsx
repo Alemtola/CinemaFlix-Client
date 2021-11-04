@@ -91,7 +91,7 @@ export function RegistrationView (props) {
                   
                   <Button 
                     className="registerButton" 
-                    variant="secondary" size="lg" type="submit" 
+                    variant="dark" size="lg" type="submit" 
                     onClick={handleSubmit}>Register
                   </Button>
                   
