@@ -87,19 +87,19 @@ export class MainView extends React.Component {
            
           <Router>
             
-            <Container fluid>
-              <Navbar bg="navColor" variant="dark" expand="lg">
-                  <Navbar.Brand href="#home">CinemaFlix</Navbar.Brand>
-                  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                  <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                      <Nav.Link href="/">Movies</Nav.Link>
-                      <Nav.Link href="/users/:username">Profile</Nav.Link>
-                      <Nav.Link href="/" onClick={() => { this.onLoggedOut() }} >Logout</Nav.Link>
-                    </Nav>
-                  </Navbar.Collapse>
-              </Navbar>
-            </Container>
+            
+            <Navbar fixed="top" className="mainnav py-3 py-lg-4" bg="navColor" variant="dark" expand="md">
+                <Navbar.Brand href="/"><span className="brand-name">CinemaFlix</span></Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="ms-auto">
+                    <Nav.Link href="/">Movies</Nav.Link>
+                    <Nav.Link href="/users/:username">Profile</Nav.Link>
+                    <Nav.Link href="/" onClick={() => { this.onLoggedOut() }} >Logout</Nav.Link>
+                  </Nav>
+                </Navbar.Collapse>
+            </Navbar>
+           
           
             <div>
               <Container>
@@ -114,7 +114,7 @@ export class MainView extends React.Component {
                     // Before the movies have been loaded
                     if (movies.length === 0) return (<div className="main-view" />);
                     return movies.map(m => (
-                      <Col sm={6} md={4} lg={3} key={m._id}>
+                      <Col sm={6} md={4} lg={4} key={m._id}>
                         <MovieCard movie={m} />
                       </Col>
                     ))

@@ -1,7 +1,12 @@
-*{
-  box-sizing: border-box;
-}
+.mainnav {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  margin-bottom: 20px;
 
+}
 .main-view {
   font-family: 'Fira Sans', sans-serif;
   background: #5c1818;
@@ -9,6 +14,17 @@
   display: inline-block;
 }
 
-.bg-navColor{
+.navColor{
   background: #000;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+}
+
+.brand-name {
+  font-size: 30px;
+  font-weight: bold;
+  color: #5c1818;
 }
