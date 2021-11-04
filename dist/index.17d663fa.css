@@ -1,3 +1,12 @@
+.mainnav {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  margin-bottom: 20px;
+}
+
 .main-view {
   font-family: "Fira Sans", sans-serif;
   background: #5c1818;
@@ -7,8 +16,11 @@
 
 .navColor {
   background: #000;
-  margin-left: 0;
-  margin-right: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
 }
 
 .brand-name {
@@ -24,6 +36,7 @@
   background: #5c1818;
   width: 100%;
   height: 100vh;
+  margin-top: 100px;
 }
 
 .bg-navColor {
@@ -43,7 +56,14 @@
   width: 100%;
   display: block;
 }
+
+.registerButton {
+  width: 100%;
+  display: block;
+  margin-top: 20px;
+}
 .movieContainer {
+  margin-top: 50px;
   display: inline-block;
 }
 
@@ -123,6 +143,10 @@
   margin-top: 20px;
   width: 100%;
 }
+.profile-view {
+  margin-top: 30px;
+}
+
 .top-elements {
   width: 100%;
   max-width: 950px;
@@ -257,6 +281,7 @@
   background: #5c1818;
   width: 100%;
   height: 100vh;
+  margin-top: 40px;
 }
 
 .bg-navColor {
@@ -283,5 +308,9 @@
 html, body, .app-container {
   background-color: #5c1818;
   font-family: "Fira Sans", sans-serif;
+}
+
+body {
+  padding-top: 85px;
 }
 /*# sourceMappingURL=index.17d663fa.css.map */
