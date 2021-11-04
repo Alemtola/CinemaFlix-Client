@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 import { Navbar, Nav, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 
 import './login-view.scss';
@@ -57,10 +58,14 @@ export function LoginView(props) {
               />
             </Form.Group>
 
-            <Button className="loginButton" variant="secondary" size="lg" type="submit" onClick={handleSubmit}>
+            <Button className="loginButton" variant="dark" size="lg" type="submit" onClick={handleSubmit}>
               Login
             </Button>
           </Form>
+          <Card.Subtitle className="mt-4 text-muted text-center">You don't have an account? Then register</Card.Subtitle>
+          <Link to={`/register`}>
+            <Button className="registerButton" variant="dark" size="lg">Register</Button>
+          </Link>
         </Card.Body>
       </Card>
     </Container>
