@@ -1,4 +1,12 @@
+.mainnav {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  margin-bottom: 20px;
 
+}
 .main-view {
   font-family: 'Fira Sans', sans-serif;
   background: #5c1818;
@@ -8,8 +16,11 @@
 
 .navColor{
   background: #000;
-  margin-left: 0;
-  margin-right: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  left: 0;
 }
 
 .brand-name {

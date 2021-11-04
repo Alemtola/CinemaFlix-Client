@@ -88,11 +88,11 @@ export class MainView extends React.Component {
           <Router>
             
             
-            <Navbar className="Container-fluid py-3 py-lg-4" bg="navColor" variant="dark" expand="md">
-                <Navbar.Brand href="#home"><span className="brand-name">CinemaFlix</span></Navbar.Brand>
+            <Navbar fixed="top" className="mainnav py-3 py-lg-4" bg="navColor" variant="dark" expand="md">
+                <Navbar.Brand href="/"><span className="brand-name">CinemaFlix</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                  <Nav className="me-auto">
+                  <Nav className="ms-auto">
                     <Nav.Link href="/">Movies</Nav.Link>
                     <Nav.Link href="/users/:username">Profile</Nav.Link>
                     <Nav.Link href="/" onClick={() => { this.onLoggedOut() }} >Logout</Nav.Link>
