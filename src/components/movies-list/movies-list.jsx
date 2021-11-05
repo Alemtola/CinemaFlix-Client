@@ -21,7 +21,7 @@ function MoviesList(props) {
   if (!movies) return <div className="main-view"/>;
 
   return <>
-    <Col md={12} style={{ margin: '1em' }}>
+    <Col className="shadow p-3 mb-5 rounded" md={12} style={{ margin: '3em' }}>
       <VisibilityFilterInput visibilityFilter={visibilityFilter} />
     </Col>
     {filteredMovies.map(m => (
