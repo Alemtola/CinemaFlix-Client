@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import { connect } from 'react-redux';
 
-import { setMovies } from '../../actions/actions';
+import { setMovies, setFilter } from '../../actions/actions';
 
 
 
@@ -13,13 +13,13 @@ import './main-view.scss';
 
 import MoviesList from '../movies-list/movies-list';
 //importing the login view into the main-view
-import { LoginView } from '../login-view/login-view';
+import LoginView  from '../login-view/login-view';
 //importing the movie-card into the main-view
-import { MovieCard } from '../movie-card/movie-card';
+//import { MovieCard } from '../movie-card/movie-card';
 //importing the movie-view into the main-view
 import { MovieView } from '../movie-view/movie-view';
 //importing the profile-view into the main-view
-import { ProfileView } from '../profile-view/profile-view';
+import ProfileView from '../profile-view/profile-view';
 //importing the director-view into the main-view
 import { DirectorView } from '../director-view/director-view';
 //importing the director-view into the main-view
@@ -190,4 +190,4 @@ let mapStateToProps = state => {
   return { movies: state.movies }
 }
 
-export default connect(mapStateToProps, { setMovies } )(MainView);
+export default connect(mapStateToProps, { setMovies, setFilter  } )(MainView);
