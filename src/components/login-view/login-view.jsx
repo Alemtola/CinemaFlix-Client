@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import axios from 'axios';
 import { Link } from "react-router-dom";
 import { Form, Button, Card, Container } from 'react-bootstrap';
+import { connect } from 'react-redux';
 
 import './login-view.scss';
 

@@ -12,6 +12,8 @@ import { Link } from 'react-router-dom';
 
 import { setUser, updateUser } from '../../actions/actions';
 
+import { connect } from 'react-redux';
+
 
 export class ProfileView extends React.Component {
 
