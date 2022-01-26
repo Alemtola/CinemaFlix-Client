@@ -10,6 +10,10 @@ import { Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootst
 
 import { Link } from 'react-router-dom';
 
+import { setUser, updateUser } from '../../actions/actions';
+
+import { connect } from 'react-redux';
+
 
 export class ProfileView extends React.Component {
 
@@ -284,11 +288,11 @@ export class ProfileView extends React.Component {
   }
 }
 
-ProfileView.propTypes = {
-  profile: PropTypes.shape({
-    Username: PropTypes.string.isRequired,
-    Password: PropTypes.string.isRequired,
-    Email: PropTypes.string.isRequired,
-    Birthday: PropTypes.string.isRequired
-  })
-};
+let mapStateToProps = state => {
+  return {
+    user: state.user,
+    movies: state.movies
+  }
+}
+
+export default connect(mapStateToProps, {setUser, updateUser})(ProfileView);

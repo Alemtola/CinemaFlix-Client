@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import axios from 'axios';
-import { Navbar, Nav, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+import { Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
 
 
 import './registration-view.scss';
@@ -106,6 +106,4 @@ export function RegistrationView (props) {
   );
 }
 
-RegistrationView.propTypes = {
-  onRegistration: PropTypes.func.isRequired
-}
+
