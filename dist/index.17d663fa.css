@@ -28,6 +28,21 @@
   font-weight: bold;
   color: #5c1818;
 }
+.movieContainer {
+  margin-top: 50px;
+  display: inline-block;
+}
+
+.movieCard {
+  width: 100%;
+  margin: 20px;
+}
+
+.cardImage {
+  width: 100% !important;
+  height: 200px !important;
+  object-fit: cover;
+}
 * {
   box-sizing: border-box;
 }
@@ -61,21 +76,6 @@
   width: 100%;
   display: block;
   margin-top: 20px;
-}
-.movieContainer {
-  margin-top: 50px;
-  display: inline-block;
-}
-
-.movieCard {
-  width: 100%;
-  margin: 20px;
-}
-
-.cardImage {
-  width: 100% !important;
-  height: 200px !important;
-  object-fit: cover;
 }
 .moviesContainer {
   background: #5c1818;
